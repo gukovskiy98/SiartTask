@@ -1,0 +1,12 @@
+@import '../../node_modules/normalize.css/normalize.css';
+@import './fonts.scss';
+
+html {
+  font-family: 'Gilroy';
+  font-weight: 400;
+}
+
+body {
+  background-color: #222;
+  color: #fff; 
+}

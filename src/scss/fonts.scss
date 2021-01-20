@@ -1,0 +1,19 @@
+@mixin addFont($font-family, $font-weight, $font-style, $src) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: fallback;
+    src: url($src + '.woff2') format('woff2'),
+      url($src + '.woff') format('woff');
+  }
+}
+
+@include addFont('Gilroy', 400, normal, '../fonts/Gilroy-Regular');
+@include addFont('Gilroy', 400, italic, '../fonts/Gilroy-RegularItalic');
+@include addFont('Gilroy', 500, normal, '../fonts/Gilroy-Medium');
+@include addFont('Gilroy', 500, italic, '../fonts/Gilroy-MediumItalic');
+@include addFont('Gilroy', 600, normal, '../fonts/Gilroy-SemiBold');
+@include addFont('Gilroy', 600, italic, '../fonts/Gilroy-SemiBoldItalic');
+@include addFont('Gilroy', 700, normal, '../fonts/Gilroy-Bold');
+@include addFont('Gilroy', 700, italic, '../fonts/Gilroy-BoldItalic');
