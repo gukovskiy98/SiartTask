@@ -1,12 +1,26 @@
 @import '../../node_modules/normalize.css/normalize.css';
 @import './fonts.scss';
 
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Gilroy';
   font-weight: 400;
+  font-size: 14px;
+  line-height: 1.16;
 }
 
 body {
-  background-color: #222;
-  color: #fff; 
+  background-color: #fff;
+  color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+@import './header.scss';
+@import './footer.scss';

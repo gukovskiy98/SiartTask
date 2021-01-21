@@ -17,3 +17,60 @@
 @include addFont('Gilroy', 600, italic, '../fonts/Gilroy-SemiBoldItalic');
 @include addFont('Gilroy', 700, normal, '../fonts/Gilroy-Bold');
 @include addFont('Gilroy', 700, italic, '../fonts/Gilroy-BoldItalic');
+@include addFont('IconFont', 400, normal, '../fonts/iconfont');
+
+[class^='icon-']:before,
+[class*=' icon-']:before {
+  font-family: 'iconfont';
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrowleft:before {
+  content: '\e809';
+  width: 5.5em;
+}
+.icon-arrowright:before {
+  content: '\e800';
+  width: 5.5em;
+}
+.icon-bin:before {
+  content: '\e801';
+}
+.icon-cart:before {
+  content: '\e802';
+}
+.icon-cartadd:before {
+  content: '\e803';
+}
+.icon-catalog:before {
+  content: '\e804';
+  width: 1.4em;
+}
+.icon-compare:before {
+  content: '\e805';
+  width: 1.4em;
+}
+.icon-heart:before {
+  content: '\e806';
+  width: 1.3em;
+}
+.icon-profile:before {
+  content: '\e807';
+}
+.icon-search:before {
+  content: '\e808';
+  width: 1.1em;
+}
