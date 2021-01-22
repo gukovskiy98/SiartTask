@@ -45,6 +45,15 @@
   display: inline-block;
 }
 
+.page-header__social-img--viber {
+  width: 19px;
+  height: 19px;
+}
+.page-header__social-img--whatsapp {
+  width: 19px;
+  height: 19px;
+}
+
 .page-header__social-el--viber {
   margin-right: 5px;
 }
@@ -90,6 +99,8 @@
 }
 
 .page-header__logo-img {
+  width: 51px;
+  height: 51px;
   margin-right: 15px;
 }
 
@@ -202,6 +213,14 @@
   justify-content: space-between;
   font-weight: 500;
   align-items: center;
+}
+
+.page-header__menu-el:hover > .page-header__menu-link {
+  color: #bf1e28;
+}
+
+.page-header__menu-el > .page-header__menu-link:active {
+  color: #888;
 }
 
 .page-header__menu-link {
