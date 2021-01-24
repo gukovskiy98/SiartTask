@@ -7,7 +7,7 @@
 
 .container--page-header {
   display: grid;
-  grid-template-rows: 40px 80px auto;
+  grid-template-rows: 40px 100px auto;
   grid-template-columns: auto auto 1fr auto;
   grid-template-areas:  "about about social tel"
                         "logo catalog search links"
@@ -21,6 +21,7 @@
 .page-header__about {
   grid-area: about;
   list-style: none;
+  margin-right: 52px;
   display: flex;
   justify-content: space-between;
   font-weight: 400;
@@ -28,7 +29,7 @@
     flex: 1 1 auto;
   }
   .page-header__about-el + .page-header__about-el {
-    margin-left: 35px;
+    margin-left: 31px;
   }
 }
 
@@ -41,25 +42,21 @@
   align-items: center;
 }
 
-.page-header__social-el {
-  display: inline-block;
+.page-header__social-el-icon {
+  line-height: 0;
 }
 
-.page-header__social-img--viber {
-  width: 19px;
-  height: 19px;
-}
-.page-header__social-img--whatsapp {
-  width: 19px;
-  height: 19px;
-}
-
-.page-header__social-el--viber {
+.page-header__social-el-icon--viber {
   margin-right: 5px;
 }
 
-.page-header__social-el--whatsapp {
+.page-header__social-el-icon--whatsapp {
   margin-right: 10px;
+}
+
+.page-header__social-img {
+  width: 19px;
+  height: 19px;
 }
 
 .page-header__social-el--tel {
@@ -117,7 +114,7 @@
   color: #fff;
   font-weight: 500;
   transition: all 0.15s ease;
-  padding: 9px 15px;
+  padding: 9px 30px;
   &:focus {
     outline: none;
     border-color: #000;
@@ -142,7 +139,7 @@
   margin-left: 20px;
   grid-area: search;
   display: flex;
-  width: 85%;
+  width: 82%;
 }
 
 .page-header__search-field {
@@ -203,7 +200,7 @@
 }
 
 .page-header__links-el + .page-header__links-el {
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .page-header__menu {
@@ -225,7 +222,6 @@
 
 .page-header__menu-link {
   display: inline-block;
-  padding: 10px 0;
 }
 
 .page-header__menu-el--expandable {
@@ -239,7 +235,7 @@
   &::after {
     position: absolute;
     right: 2px;
-    top: 15px;
+    top: 5px;
     content: '';
     display: inline-block;
     width: 6px;
@@ -252,13 +248,13 @@
     transition: all 0.15s ease;
   }
   &:hover::after {
-    top: 19px;
+    top: 9px;
     border-color: #bf1e28;
     border-left-color: transparent;
     border-bottom-color: transparent;
   }
   &:active::after {
-    top: 10px;
+    top: 0;
     border-color: #888;
     border-left-color: transparent;
     border-bottom-color: transparent;
@@ -268,19 +264,28 @@
 .page-header__additional-menu {
   display: none;
   position: absolute;
+  font-size: 12px;
+  z-index: 1;
   top: 30px;
   left: -21px;
   list-style: none;
   border: 1px solid #ececec;
   background-color: #fff;
   line-height: 2.5;
-  padding: 10px 30px 10px 20px;
+  padding: 6px 26px 12px 20px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+  }
 }
 
 .page-header__m-search {
   grid-area: m-search;
   display: none;
-  font-size: 20px;
 }
 
 .page-header__burger {
@@ -319,45 +324,91 @@
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1200px) {
+  .page-header {
+    font-size: 12px;
+  }
   .container--page-header {
-  grid-template-rows: 40px 80px;
-  grid-template-columns: auto auto auto;
-  grid-template-areas:  "about about tel"
-                        "logo catalog links";
+    grid-template-columns: 1fr 1fr 2fr auto;
   }
-  .page-header__about .page-header__about-el + .page-header__about-el {
-    margin-left: 10px;
+  .page-header__about {
+    margin-right: 0;
+    .page-header__about-el + .page-header__about-el {
+      margin-left: 12px;
+    }
   }
-  .page-header__social {
-    display: none;
+  .page-header__logo {
+    font-size: 14px;
   }
   .page-header__catalog {
     justify-self: start;
+    padding: 9px 10px;
   }
   .page-header__search-form {
-    display: none;
+    width: 90%;
   }
-  .page-header__menu {
-    display: none;
-  }
-  .page-header__m-search {
-    display: block;
-  }
-  .page-header__burger {
-    display: block;
+  .page-header__links-el + .page-header__links-el {
+    margin-left: 20px;
   }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 900px) {
   .container--page-header {
-  grid-template-rows: 66px 60px;
-  grid-template-columns: auto auto;
-  grid-template-areas:  "logo tel"
+  grid-template-rows: 40px 100px;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-areas:  "about about tel"
+                        "logo catalog links";
+  }
+
+  .page-header__social {
+    display: none;
+  }
+  
+  .page-header__catalog {
+    justify-self: start;
+  }
+  
+  .page-header__search-form {
+    display: none;
+  }
+  
+  .page-header__menu {
+    display: none;
+  }
+  
+  .page-header__m-search {
+    display: block;
+  }
+  
+  .page-header__burger {
+    display: block;
+  }
+  .page-header__links {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
+  .container--page-header {
+    grid-template-rows: 66px 60px;
+    grid-template-columns: auto auto;
+    grid-template-areas:  "logo tel"
                         "links links";
   }
   .page-header__separator {
     top: 66px;
+  }
+  .page-header__logo {
+    font-size: 12px;
+  }
+  .page-header__logo-img {
+    width: 38px;
+    height: 38px;
+  }
+  .page-header__links {
+    font-size: 16px;
+    justify-content: space-between;
   }
   .page-header__catalog {
     display: none;
